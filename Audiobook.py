@@ -29,7 +29,7 @@ def talk():
         # selecting page
         count = read_file.numPages
         text = ''
-        for i in range(1,count):
+        for i in range(int(page_n),count):
             page = read_file.getPage(i)
             text += page.extract_text()
 
