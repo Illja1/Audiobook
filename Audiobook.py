@@ -27,9 +27,12 @@ def talk():
         # read pdf
         read_file = PyPDF2.PdfFileReader(book)
         # selecting page
-        page = read_file.getPage(int(page_n))
-        # extracting page from page
-        text = page.extractText()
+        count = read_file.numPages
+        text = ''
+        for i in range(1,count):
+            page = read_file.getPage(i)
+            text += page.extract_text()
+
 
         speaker.say(text)
         speaker.runAndWait()
@@ -56,7 +59,7 @@ page_num_box = customtkinter.CTkEntry(master=window, width=200)
 page_num_box.place(relx=0.5, rely=0.65, anchor=tkinter.CENTER)
 
 upload_button = customtkinter.CTkButton(master=window, text="Upload PDF file", width=200, command=select_file)
-upload_button.place(relx=0.5, rely=0.8, anchor=tkinter.CENTER)
+upload_button.place(relx=0.5, rely=0., anchor=tkinter.CENTER)
 
 
 speak = customtkinter.CTkButton(master=window, text="Speak", width=200, command=talk)
