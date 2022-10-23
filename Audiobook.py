@@ -48,7 +48,7 @@ window.config(padx=50, pady=50)
 
 text = customtkinter.CTkLabel(master=window, text="File selected:\nnone", width=280, height=100,
                               fg_color=("white", "#2e2e2e"), corner_radius=8, text_font=('Arial', 18))
-text.place(relx=0.5, rely=0.1, anchor=tkinter.CENTER)
+text.place(relx=0.5, rely=0, anchor=tkinter.CENTER)
 
 
 info_box = customtkinter.CTkLabel(master=window,text='Enter page number below\n↓ ' ,width=280,fg_color=("white", "#2e2e2e"), corner_radius=8, text_font=('Arial', 18))
@@ -56,15 +56,15 @@ info_box.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
 
 
 page_num_box = customtkinter.CTkEntry(master=window, width=200)
-page_num_box.place(relx=0.5, rely=0.65, anchor=tkinter.CENTER)
+page_num_box.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
 
 upload_button = customtkinter.CTkButton(master=window, text="Upload PDF file", width=200, command=select_file)
-upload_button.place(relx=0.5, rely=0., anchor=tkinter.CENTER)
+upload_button.place(relx=0.5, rely=0.75, anchor=tkinter.CENTER)
 
 
 speak = customtkinter.CTkButton(master=window, text="Speak", width=200, command=talk)
-speak.place(relx=0.5, rely=0.95, anchor=tkinter.CENTER)
+speak.place(relx=0.5, rely=0.9, anchor=tkinter.CENTER)
 
 exit_prog = customtkinter.CTkButton(master=window, text="Exit", width=200, command=window.destroy)
-exit_prog.place(relx=0.5, rely=1.1, anchor=tkinter.CENTER)
+exit_prog.place(relx=0.5, rely=1.05, anchor=tkinter.CENTER)
 window.mainloop()
